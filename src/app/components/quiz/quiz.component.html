@@ -31,7 +31,7 @@
 
 <div *ngIf="submitted" class="getStarted">
     <h4 class="m-0">Your score is {{score}} out of {{questionCount}}</h4>
-    <h6 class="score_subtext">Here are the correct answer(s):</h6>
+    <h6 class="score_subtext">Here are the correct answers:</h6>
     <ol style="font-style: italic;">
         <li *ngFor="let question of sumbittedAnswers">
             You answered: <b>{{question.selected}}</b>,
