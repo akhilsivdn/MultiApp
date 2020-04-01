@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.timerController {
+    background: #ccc;
+    width: 30%;
+    text-align: center;
+    margin-top: 2em;
+    margin-left: 2em;
+    border-radius: 5px;
+}
+
+.timer {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+.time-separtor::after {
+    display: inline;
+    content: ":";
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.controls {
+    padding: 1em;
+}
+
+i {
+    margin-right: 1em;
+}
+
+i:last-child {
+    margin-right: 0;
+}
+
+.controlButtons{
+    background: red;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    color: #fff;
+}

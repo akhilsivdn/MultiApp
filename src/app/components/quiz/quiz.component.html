@@ -1,0 +1,43 @@
+<div class="getStarted" *ngIf="!hasQuestions">
+    <div class="questionInfo">
+        <div>
+            <label for="questionCount">Enter number of questions</label>
+            <input type="number" class="form-control" placeholder="10" [(ngModel)]="questionCount" id="questionCount">
+        </div>
+        <div>
+            <label for="difficultySelect">Select dificulty level</label>
+            <select id="difficultySelect" class="form-control" (change)='questionTypeChange($event)'>
+                <option value="easy" selected>Easy</option>
+                <option value="medium">Medium</option>
+                <option value="difficult">Difficult</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" (click)="getStarted()" class="btn btn-success mt-3">Get Started</button>
+</div>
+<div *ngIf="hasQuestions && !submitted" class="qna">
+    <h5>{{currentQuestion.question}}</h5>
+    <div class="answerGrid">
+        <button type="button" *ngFor="let answer of currentQuestion.answers" (click)="answerBtnClick($event)"
+            class="btn answerButton btn-light">
+            {{answer}}
+        </button>
+    </div>
+    <button type="button" (click)="nextQuestion()" *ngIf="!isLastQuestion" class="btn btn-primary mt-4">Next
+        Question</button>
+    <button type="button" (click)="submitQuiz()" *ngIf="isLastQuestion" class="btn btn-success mt-4">Submit
+        Quiz</button>
+</div>
+
+<div *ngIf="submitted" class="getStarted">
+    <h4 class="m-0">Your score is {{score}} out of {{questionCount}}</h4>
+    <h6 class="score_subtext">Here are the correct answer(s):</h6>
+    <ol style="font-style: italic;">
+        <li *ngFor="let question of sumbittedAnswers">
+            You answered: <b>{{question.selected}}</b>,
+            correct answer: <b>{{question.correct}}</b>
+        </li>
+    </ol>
+    <h4 class="m-0 mt-5 text-primary">Thank you!</h4>
+    <button class="btn btn-success mt-3" (click)="restartQuiz()">Restart Quiz</button>
+</div>

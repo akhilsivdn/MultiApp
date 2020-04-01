@@ -1,0 +1,15 @@
+.navBtns{
+    background: #ccc;
+    width: 50%;
+    margin-left: 2em;
+    margin-top: 2em;
+    padding: 2em;
+    padding-bottom: 0.5em;
+    border-radius: 5px;
+}
+
+.msg{
+    margin-top: 2em;
+    font-size: 12px;
+    font-weight: 600;
+}

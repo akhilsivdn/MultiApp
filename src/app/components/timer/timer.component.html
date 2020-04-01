@@ -1,0 +1,13 @@
+<div class="timerController">
+    <div class="timer">
+        <span class="time-separtor">{{timehh}}</span>
+        <span class="time-separtor">{{timemm}}</span>
+        <span>{{timess}}</span>
+    </div>
+    <div class="controls">
+        <!-- <i class="controlButtons"></i> -->
+        <i class="fa fa-play controlButtons" *ngIf="!isStarted || isPaused" (click)="startTimer()"></i>
+        <i class="fa fa-pause controlButtons" *ngIf="!isPaused && isStarted" (click)="pauseTimer()"></i>
+        <i class="fa fa-stop controlButtons" (click)="stopTimer()"></i>
+    </div>
+</div>
